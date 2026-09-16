@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Buchverwaltung</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 6px; text-align: left; }
+        th { background-color: #eee; }
+        input, select { padding: 4px; margin: 4px 0; }
+        label { font-weight: bold; }
+        .fehler { color: red; }
+    </style>
+</head>
+<body>
+    <h2><a href="/Buecher">Buchverwaltung</a></h2>
+    <hr />
+    @RenderBody()
+</body>
+</html>

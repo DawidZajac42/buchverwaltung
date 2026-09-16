@@ -1,0 +1,19 @@
+@model Buch
+
+@{
+    ViewData["Title"] = "Buch loeschen";
+}
+
+<h1>Buch loeschen</h1>
+
+<p>Soll dieses Buch wirklich geloescht werden?</p>
+
+<p><b>Titel:</b> @Model.Titel</p>
+<p><b>Autor:</b> @Model.Autor</p>
+<p><b>Jahr:</b> @Model.Erscheinungsjahr</p>
+
+<form method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Ja, loeschen</button>
+    <a href="/Buecher">Abbrechen</a>
+</form>

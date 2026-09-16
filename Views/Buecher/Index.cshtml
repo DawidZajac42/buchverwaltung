@@ -1,0 +1,53 @@
+@model List<Buch>
+
+@{
+    ViewData["Title"] = "Meine Buecher";
+}
+
+<h1>Meine Buecher</h1>
+
+<form method="get">
+    <input type="text" name="suche" placeholder="Titel oder Autor" value="@ViewData["Suche"]" />
+    <button type="submit">Suchen</button>
+</form>
+
+<p><a href="/Buecher/Create">Neues Buch anlegen</a></p>
+
+<table>
+    <tr>
+        <th>Titel</th>
+        <th>Autor</th>
+        <th>Jahr</th>
+        <th>Gelesen</th>
+        <th></th>
+    </tr>
+
+    @foreach (var buch in Model)
+    {
+        <tr>
+            <td>@buch.Titel</td>
+            <td>@buch.Autor</td>
+            <td>@buch.Erscheinungsjahr</td>
+            <td>
+                @if (buch.Gelesen)
+                {
+                    <span>ja</span>
+                }
+                else
+                {
+                    <span>nein</span>
+                }
+            </td>
+            <td>
+                <a href="/Buecher/Details/@buch.Id">Details</a> |
+                <a href="/Buecher/Edit/@buch.Id">Bearbeiten</a> |
+                <a href="/Buecher/Delete/@buch.Id">Loeschen</a>
+            </td>
+        </tr>
+    }
+</table>
+
+@if (Model.Count == 0)
+{
+    <p>Keine Buecher gefunden.</p>
+}

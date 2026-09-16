@@ -1,0 +1,27 @@
+@model Buch
+
+@{
+    ViewData["Title"] = "Neues Buch";
+}
+
+<h1>Neues Buch anlegen</h1>
+
+<form method="post">
+    <div asp-validation-summary="All" class="fehler"></div>
+
+    <label>Titel</label><br />
+    <input asp-for="Titel" /><br />
+
+    <label>Autor</label><br />
+    <input asp-for="Autor" /><br />
+
+    <label>Erscheinungsjahr</label><br />
+    <input asp-for="Erscheinungsjahr" type="number" /><br />
+
+    <label>
+        <input type="checkbox" asp-for="Gelesen" /> Gelesen
+    </label><br /><br />
+
+    <button type="submit">Speichern</button>
+    <a href="/Buecher">Abbrechen</a>
+</form>

@@ -1,0 +1,24 @@
+@model Buch
+
+@{
+    ViewData["Title"] = "Buchdetails";
+}
+
+<h1>@Model.Titel</h1>
+
+<p><b>Autor:</b> @Model.Autor</p>
+<p><b>Erscheinungsjahr:</b> @Model.Erscheinungsjahr</p>
+<p>
+    <b>Gelesen:</b>
+    @if (Model.Gelesen)
+    {
+        <span>ja</span>
+    }
+    else
+    {
+        <span>nein</span>
+    }
+</p>
+
+<a href="/Buecher/Edit/@Model.Id">Bearbeiten</a> |
+<a href="/Buecher">Zurueck zur Liste</a>
